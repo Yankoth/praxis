@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationsApi", "LocationsApi\LocationsApi.csproj", "{F02171C8-8588-4112-860A-E68DC8BC5351}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F02171C8-8588-4112-860A-E68DC8BC5351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F02171C8-8588-4112-860A-E68DC8BC5351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F02171C8-8588-4112-860A-E68DC8BC5351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F02171C8-8588-4112-860A-E68DC8BC5351}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09FB3510-BDF5-4B16-8D76-5C37EFAEFAD6}
+	EndGlobalSection
+EndGlobal
