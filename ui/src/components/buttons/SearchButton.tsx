@@ -1,16 +1,18 @@
-import React from "react";
+import React from 'react';
 
 interface SearchButtonProps {
-  type: "submit" | "button";
+  text: string;
+  disabled?: boolean;
 }
 
-const SearchButton: React.FC<SearchButtonProps> = ({ type }) => {
+const SearchButton: React.FC<SearchButtonProps> = ({ text, disabled }) => {
   return (
     <button
-      type={type}
-      className="w-1/4 px-4 py-2 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 focus:outline-none"
+      type="submit"
+      className="w-full px-4 py-2 bg-blue-500 text-white font-semibold rounded-full hover:bg-blue-600 focus:outline-none"
+      disabled={disabled}
     >
-      Search
+      {text}
     </button>
   );
 };
