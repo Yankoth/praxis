@@ -1,8 +1,8 @@
-import React, { ReactNode } from "react";
-import { useForm, FormProvider } from "react-hook-form";
+import React, { ReactNode } from 'react';
+import { useForm, FormProvider } from 'react-hook-form';
 
 interface FormProps {
-  handleSubmit: (values: any) => void;
+  handleSubmit: (values: any) => void; // eslint-disable-line
   children: ReactNode;
 }
 

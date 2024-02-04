@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 // import Navbar from "@/components/Navbar.tsx";
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 
 const MainLayout: React.FC = () => {
   return (

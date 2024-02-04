@@ -1,11 +1,11 @@
-import { createBrowserRouter } from "react-router-dom";
-import MainLayout from "./components/layouts/MainLayout.tsx";
-import SearchView from "./views/SearchView.tsx";
-import ResultsView from "./views/ResultsView.tsx";
+import { createBrowserRouter } from 'react-router-dom';
+import MainLayout from './components/layouts/MainLayout.tsx';
+import SearchView from './views/SearchView.tsx';
+import ResultsView from './views/ResultsView.tsx';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <MainLayout />,
     children: [
       {
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
         element: <SearchView />,
       },
       {
-        path: "results",
+        path: 'results',
         element: <ResultsView />,
       },
     ],
