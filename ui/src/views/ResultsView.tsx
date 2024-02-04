@@ -1,28 +1,58 @@
-import React, { useMemo, useEffect } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useMemo, useEffect } from 'react';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+import useSearchHook from '../hooks/useSearchHook';
+import PageLayout from '../components/layouts/PageLayout';
+import LoadingSpinner from '../components/spinners/LoadingSpinner';
+import Form from '../components/forms/Form';
+import SearchField from '../components/fields/SearchField';
+import SearchButton from '../components/buttons/SearchButton';
+import Results from '../components/Results';
 
 function ResultsView() {
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const searchValue = useMemo(() => {
-    const params = Object.fromEntries([...searchParams]);
-    return params?.searchValue;
+    return searchParams.get('searchValue') ?? '';
   }, [searchParams]);
 
-  console.log(searchValue);
-
   useEffect(() => {
-    // temporal, need to use the react-query
     if (!searchValue) {
-      navigate("/", { replace: true });
+      navigate('/', { replace: true });
     }
-  }, [searchValue]);
+  }, [searchValue, navigate]);
+
+  const handleSubmit = (values: { searchValue: string }) => {
+    setSearchParams({ searchValue: values?.searchValue });
+  };
+
+  const { isFetching } = useSearchHook(searchValue);
 
   return (
-    <div className="text-center mt-5">
-      <h1 className="font-bold underline">{searchValue}</h1>
-    </div>
+    <PageLayout>
+      <Form handleSubmit={handleSubmit}>
+        <div className="flex items-center gap-2">
+          <div className="grow">
+            <SearchField
+              name="searchValue"
+              required
+              maxLength={250}
+              value={searchValue ?? ''}
+            />
+          </div>
+          <div className="grow-none">
+            <SearchButton text="Search" disabled={isFetching} />
+          </div>
+        </div>
+      </Form>
+      {isFetching ? (
+        <div className="flex justify-center mt-5">
+          <LoadingSpinner />
+        </div>
+      ) : (
+        <Results />
+      )}
+    </PageLayout>
   );
 }
 
