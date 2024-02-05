@@ -1,6 +1,11 @@
 # praxis
 Praxis Technical Test
 
+# To make the UI project work:
+Need to create .env file just like the .env.example, and put these values:
+VITE_BING_SERVICE_BASE_URL=https://api.bing.microsoft.com/
+VITE_BING_SERVICE_SUBSCRIPTION_KEY=<BING_SERVICE_SUBSCRIPTION_KEY>
+
 # UI improvements/todos:
 Use barrel index files to avoid too much lines of imports.
 Use tsconfig paths for imports with @ shortcuts.
