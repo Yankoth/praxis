@@ -1,5 +1,7 @@
 using LocationsApi.Context;
 using LocationsApi.Repositories;
+using LocationsApi.Services;
+using LocationsApi.Validators;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -10,6 +12,9 @@ builder.Services.AddDbContext<LocalDbContext>(options => options.UseSqlite(dbStr
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddRepositories();
+builder.Services.AddServices();
+builder.Services.AddValidators();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
