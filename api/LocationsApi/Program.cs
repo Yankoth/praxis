@@ -1,10 +1,12 @@
 using LocationsApi.Context;
+using LocationsApi.Repositories;
 using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 var dbString = builder.Configuration.GetConnectionString("LocalDatabase");
 builder.Services.AddDbContext<LocalDbContext>(options => options.UseSqlite(dbString));
 
+builder.Services.AddRepositories();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
